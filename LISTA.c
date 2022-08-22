@@ -7,7 +7,7 @@
 void ex1(){
     float valorhora,percdesc,salarioliq,valordesc,salariobruto, hora;
 
-    printf("Digite o valor pago por hora: ");
+    printf("\nDigite o valor pago por hora: ");
     scanf("%f", &valorhora);
 
     printf("\nDigite o numero de horas por semana: ");
@@ -22,28 +22,30 @@ void ex1(){
 
     printf("\n\nO salario liquido mensal do programador e: %.2f", salarioliq);
 
+    return voltar();
+
 }
 
 void ex2(){
     float n1,n2,n3,n4,n5,p1,p2,p3,p4,p5, medponderada; //n1,n2,n3,n4,n5 = numero1, numero2,..., p1,p2,p3,p4,p5 = peso1, peso2,..., mp = media ponderada
 
-    printf("Entre o numero 1: ");
+    printf("\nEntre o numero 1: ");
     scanf("%f", &n1);
     printf("Entre com o peso associado ao numero 1: ");
     scanf("%f", &p1);
-    printf("\n\nEntre o numero 2: ");
+    printf("\nEntre o numero 2: ");
     scanf("%f", &n2);
     printf("Entre com o peso associado ao numero 2: ");
     scanf("%f", &p2);
-    printf("\n\nEntre o numero 3: ");
+    printf("\nEntre o numero 3: ");
     scanf("%f", &n3);
     printf("Entre com o peso associado ao numero 3: ");
     scanf("%f", &p3);
-    printf("\n\nEntre o numero 4: ");
+    printf("\nEntre o numero 4: ");
     scanf("%f", &n4);
     printf("Entre com o peso associado ao numero 4: ");
     scanf("%f", &p4);
-    printf("\n\nEntre o numero 5: ");
+    printf("\nEntre o numero 5: ");
     scanf("%f", &n5);
     printf("Entre com o peso associado ao numero 5: ");
     scanf("%f", &p5);
@@ -57,7 +59,7 @@ void ex2(){
 void ex3(){
     int numero;
 
-    printf("Digite um numero qualquer: ");
+    printf("\nDigite um numero qualquer: ");
     scanf("%d", &numero);
 
     if(numero < 0)
@@ -73,7 +75,7 @@ void ex4(){
     int minuto, velocidade;
     float distancia;
 
-    printf("Digite o tempo percorrido em minuto: ");
+    printf("\nDigite o tempo percorrido em minuto: ");
     scanf("%d", &minuto);
 
     printf("\nDigite a velocidade km/h: ");
@@ -88,7 +90,7 @@ void ex4(){
 void ex5(){
     int numero;
 
-    printf("Digite um numero qualquer: ");
+    printf("\nDigite um numero qualquer: ");
     scanf("%d", numero);
 
     if(numero % 4 == 0 && numero % 5 == 0){
@@ -106,44 +108,97 @@ void ex5(){
 
 }
 
-void menu(){
+void ex6(){
+    float a, b, c, delta, x1, x2;
+
+    printf("\nDigite o valor de A: ");
+    scanf("%f", &a);
+    printf("\nDigite o valor de B: ");
+    scanf("%f", &b);
+    printf("\nDigite o valor de C: ");
+    scanf("%f", &c);
+
+    if(a == 0){
+        printf("Nao e uma equacao de segundo grau");
+        return 0;
+    }
+
+    delta = pow(b, 2) - 4 * a * c;
+    if(delta <  0){
+        printf("\nNao existem raizes reais");
+        return 0;
+    }
+
+    if (delta == 0){
+    x1 = ((-b + sqrt(delta)) / 2 * a);
+    printf("A unica raiz é %.2f", x1);
+  }
+  else{
+    x1 = ((-b + sqrt(delta)) / 2 * a);
+    x2 = ((-b - sqrt(delta)) / 2 * a);
+    printf("As raizes são %.2f e %.2f", x1, x2);
+  }
+}
+
+void ex7(){
+    char caract;
+
+    printf("/nDigite um caractere do teclado: ");
+    caract = getchar();
+    printf("\nO caractere %c tem o valor decimal %1 e o valor hexadecimal %x", caract, caract, caract);
+}
+
+/*void voltar(){
+    bool decisao = S;
+
+    printf("/nDeseja continuar? (S ou N) : ");
+    scanf("%c", decisao);
+    if(decisao == S || decisao == s);
+        return;
+    else if(decisao == N || decisao == n);
+        return menu();
+    else
+        print("Digite S ou N...");
+
+}*/
+
+int  menu(){
     int opcao;
 
     do{
         printf("LISTA 1");
-        printf("\n\nExercicio1...............................1");
-        printf("\n\nExercicio2...............................2");
-        printf("\n\nExercicio3...............................3");
-        printf("\n\nExercicio4...............................4");
-        printf("\n\nExercicio5...............................5");
-        printf("\n\nExercicio6...............................6");
-        printf("\n\nExercicio7...............................7");
-        printf("\n\nSair.....................................0");
+        printf("\n\n1...............................Exercicio1");
+        printf("\n2...............................Exercicio2");
+        printf("\n3...............................Exercicio3");
+        printf("\n4...............................Exercicio4");
+        printf("\n5...............................Exercicio5");
+        printf("\n6...............................Exercicio6");
+        printf("\n7...............................Exercicio7");
+        printf("\n0.....................................Sair");
         printf("\n\nDigite o numero da opcao desejada: ");
         scanf("%d", &opcao);
-    }while(opcao < 0 || 5 < opcao);
+    }while(opcao < 0 || 7 < opcao);
 
 }
 
 int main(){
-    int opcao;
+    int opcao = menu();
 
     do{
-        while(getchar() != "/n");
-        opcao = menu();
+        while((getchar()) != '\n');
         switch(opcao){
             case 1 : ex1(); break;
             case 2 : ex2(); break;
             case 3 : ex3(); break;
             case 4 : ex4(); break;
             case 5 : ex5(); break;
-            //case 6 : ex6; break;
-            //case 7 : ex7; break;
+            case 6 : ex6(); break;
+            case 7 : ex7(); break;
+            case 0 : exit(0);
             default : printf("Opcao invalida!");
         }
-    }while(opcao);
+    }while(opcao != 0);
 
     getch();
     return 0;
 }
-
