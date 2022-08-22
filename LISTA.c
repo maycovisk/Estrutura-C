@@ -176,6 +176,8 @@ void enter(){
     while((getchar()) != '\n');
     printf("\n\nPressione ENTER para voltar ao MENU INICIAL...\n\n");
     getchar();
+    system("cls");  //usado para WINDOWS
+    //system("clear"); //usado para LINUX
     return main();
 }
 
