@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-#define semana = '4.5'
+#define semana 4.5
 
 void ex1(){
     float valorhora,percdesc,salarioliq,valordesc,salariobruto, hora;
@@ -11,7 +11,7 @@ void ex1(){
     scanf("%f", &valorhora);
 
     printf("\nDigite o numero de horas por semana: ");
-    scanf("%f", &hs);
+    scanf("%f", &hora);
 
     printf("\nDigite o percentual de desconto a ser retido para INSS: ");
     scanf("%f", &percdesc);
@@ -57,15 +57,15 @@ void ex2(){
 void ex3(){
     int numero;
 
-    printf("Digite um numero qualquer: ")
+    printf("Digite um numero qualquer: ");
     scanf("%d", &numero);
 
     if(numero < 0)
-        printf("O numero %d elevado ao quadro e %d", numero, numero * numero);
+        printf("\nO numero %d elevado ao quadro e %d", numero, numero * numero);
     else if(numero > 0)
-        printf("A raiz quadrada do numero %d e %d", numero, sqrt(numero));
+        printf("\nA raiz quadrada do numero %d e %d", numero, sqrt(numero));
     else
-        printf("O numero digitado e ZERO");
+        printf("\nO numero digitado e ZERO");
 
 }
 
@@ -76,16 +76,74 @@ void ex4(){
     printf("Digite o tempo percorrido em minuto: ");
     scanf("%d", &minuto);
 
-    printf("Digite a velocidade km/h: ");
+    printf("\nDigite a velocidade km/h: ");
     scanf("%d", &velocidade);
 
     distancia = velocidade * (minuto / 60.0);
 
-    printf("A distancia percorrida e %f", distancia)
+    printf("\nA distancia percorrida e %f", distancia);
 
 }
 
 void ex5(){
+    int numero;
 
+    printf("Digite um numero qualquer: ");
+    scanf("%d", numero);
+
+    if(numero % 4 == 0 && numero % 5 == 0){
+        printf("\nO numero %d e divisivel por 4 e por 5", numero);
+    }
+    else if(numero % 4 == 0){
+        printf("\nO numero %d e divisivel por 4 mas nao por 5", numero);
+    }
+    else if(numero % 5 == 0){
+        printf("\nO numero %d e divisivel por 5 mas nao por 4", numero);
+    }
+    else{
+        printf("\nO numero %d nao e divisivel nem por 4 e nem por 5", numero);
+    }
 
 }
+
+void menu(){
+    int opcao;
+
+    do{
+        printf("LISTA 1");
+        printf("\n\nExercicio1...............................1");
+        printf("\n\nExercicio2...............................2");
+        printf("\n\nExercicio3...............................3");
+        printf("\n\nExercicio4...............................4");
+        printf("\n\nExercicio5...............................5");
+        printf("\n\nExercicio6...............................6");
+        printf("\n\nExercicio7...............................7");
+        printf("\n\nSair.....................................0");
+        printf("\n\nDigite o numero da opcao desejada: ");
+        scanf("%d", &opcao);
+    }while(opcao < 0 || 5 < opcao);
+
+}
+
+int main(){
+    int opcao;
+
+    do{
+        while(getchar() != "/n");
+        opcao = menu();
+        switch(opcao){
+            case 1 : ex1(); break;
+            case 2 : ex2(); break;
+            case 3 : ex3(); break;
+            case 4 : ex4(); break;
+            case 5 : ex5(); break;
+            //case 6 : ex6; break;
+            //case 7 : ex7; break;
+            default : printf("Opcao invalida!");
+        }
+    }while(opcao);
+
+    getch();
+    return 0;
+}
+
