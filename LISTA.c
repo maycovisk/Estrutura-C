@@ -22,7 +22,7 @@ void ex1(){
 
     printf("\n\nO salario liquido mensal do programador e: %.2f", salarioliq);
 
-    return voltar();
+    return enter();
 
 }
 
@@ -54,6 +54,8 @@ void ex2(){
 
     printf("A media ponderada e %.2f", medponderada);
 
+    return enter();
+
 }
 
 void ex3(){
@@ -68,6 +70,8 @@ void ex3(){
         printf("\nA raiz quadrada do numero %d e %d", numero, sqrt(numero));
     else
         printf("\nO numero digitado e ZERO");
+
+    return enter();
 
 }
 
@@ -84,6 +88,8 @@ void ex4(){
     distancia = velocidade * (minuto / 60.0);
 
     printf("\nA distancia percorrida e %f", distancia);
+
+    return enter();
 
 }
 
@@ -105,6 +111,8 @@ void ex5(){
     else{
         printf("\nO numero %d nao e divisivel nem por 4 e nem por 5", numero);
     }
+
+    return enter();
 
 }
 
@@ -129,15 +137,18 @@ void ex6(){
         return 0;
     }
 
-    if (delta == 0){
-    x1 = ((-b + sqrt(delta)) / 2 * a);
-    printf("A unica raiz é %.2f", x1);
-  }
-  else{
-    x1 = ((-b + sqrt(delta)) / 2 * a);
-    x2 = ((-b - sqrt(delta)) / 2 * a);
-    printf("As raizes são %.2f e %.2f", x1, x2);
-  }
+    if(delta == 0){
+        x1 = ((-b + sqrt(delta)) / 2 * a);
+        printf("A unica raiz é %.2f", x1);
+    }
+    else{
+        x1 = ((-b + sqrt(delta)) / 2 * a);
+        x2 = ((-b - sqrt(delta)) / 2 * a);
+        printf("As raizes são %.2f e %.2f", x1, x2);
+    }
+
+    return enter();
+
 }
 
 void ex7(){
@@ -145,22 +156,20 @@ void ex7(){
 
     printf("/nDigite um caractere do teclado: ");
     caract = getchar();
-    printf("\nO caractere %c tem o valor decimal %1 e o valor hexadecimal %x", caract, caract, caract);
+    printf("\nO caractere %c tem o valor decimal %i e o valor hexadecimal %x", caract, caract, caract);
+
+    return enter();
+
 }
 
-/*void voltar(){
-    bool decisao = S;
+void enter(){
 
-    printf("/nDeseja continuar? (S ou N) : ");
-    scanf("%c", decisao);
-    if(decisao == S || decisao == s);
-        return;
-    else if(decisao == N || decisao == n);
-        return menu();
-    else
-        print("Digite S ou N...");
+    while((getchar()) != '\n');
+    printf("\n\nPressione ENTER para voltar ao MENU INICIAL...\n\n");
+    getchar();
+    return menu();
+}
 
-}*/
 
 int  menu(){
     int opcao;
@@ -199,6 +208,5 @@ int main(){
         }
     }while(opcao != 0);
 
-    getch();
     return 0;
 }
