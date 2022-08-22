@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <math.h>
 
 #define semana 4.5
 
 void ex1(){
     float valorhora,percdesc,salarioliq,valordesc,salariobruto, hora;
+    printf("\n\nEXERCICIO1\nAPRESENTAR SALARIO LIQUIDO DO PROGRAMADOR \nCONSIDERANDO QUE EM MEDIA TEM-SE 4,5 SEMANAS A CADA MES");
 
-    printf("\nDigite o valor pago por hora: ");
+    printf("\n\nDigite o valor pago por hora: ");
     scanf("%f", &valorhora);
 
     printf("\nDigite o numero de horas por semana: ");
@@ -28,8 +30,9 @@ void ex1(){
 
 void ex2(){
     float n1,n2,n3,n4,n5,p1,p2,p3,p4,p5, medponderada; //n1,n2,n3,n4,n5 = numero1, numero2,..., p1,p2,p3,p4,p5 = peso1, peso2,..., mp = media ponderada
+    printf("\n\nEXERCICIO2\nENTRAR COM 5 NUMEROS E 5 PESOS \nE APRESENTAR A MEDIA PONDERADA");
 
-    printf("\nEntre o numero 1: ");
+    printf("\n\nEntre o numero 1: ");
     scanf("%f", &n1);
     printf("Entre com o peso associado ao numero 1: ");
     scanf("%f", &p1);
@@ -60,14 +63,16 @@ void ex2(){
 
 void ex3(){
     int numero;
+    printf("\n\nEXERCICIO3\nENTRAR COM UM VALOR E VERIFICAR SE E NEGATIVO, \nZERO OU POSITIVO, SE NEGATIVO, APRESENTE");
+    printf("\nO NUMERO AO QUADRADO, SE POSITIVO APRESENTE \nA RAIZ QUADRADA DELE E SE CASO SEJA ZERO, APRESENTE \nA MENSAGEM AO USUARIO QUE O NUMERO E ZERO");
 
-    printf("\nDigite um numero qualquer: ");
+    printf("\n\nDigite um numero qualquer: ");
     scanf("%d", &numero);
 
     if(numero < 0)
         printf("\nO numero %d elevado ao quadro e %d", numero, numero * numero);
     else if(numero > 0)
-        printf("\nA raiz quadrada do numero %d e %d", numero, sqrt(numero));
+        printf("\nA raiz quadrada do numero %d e %.2f", numero, sqrt(numero));
     else
         printf("\nO numero digitado e ZERO");
 
@@ -78,8 +83,9 @@ void ex3(){
 void ex4(){
     int minuto, velocidade;
     float distancia;
+    printf("\n\nEXERCICIO4\nCALCULAR A DISTANCIA TOTAL PERCORRIDA POR UM VEICULO");
 
-    printf("\nDigite o tempo percorrido em minuto: ");
+    printf("\n\nDigite o tempo percorrido em minuto: ");
     scanf("%d", &minuto);
 
     printf("\nDigite a velocidade km/h: ");
@@ -87,7 +93,7 @@ void ex4(){
 
     distancia = velocidade * (minuto / 60.0);
 
-    printf("\nA distancia percorrida e %f", distancia);
+    printf("\nA distancia percorrida e %.2f km/h", distancia);
 
     return enter();
 
@@ -95,9 +101,10 @@ void ex4(){
 
 void ex5(){
     int numero;
+    printf("\n\nEXERCICIO5\nVERIFICAR SE O NUMERO E DIVISIVEL POR 4, POR 5 OU POR AMBOS");
 
-    printf("\nDigite um numero qualquer: ");
-    scanf("%d", numero);
+    printf("\n\nDigite um numero qualquer: ");
+    scanf("%d", &numero);
 
     if(numero % 4 == 0 && numero % 5 == 0){
         printf("\nO numero %d e divisivel por 4 e por 5", numero);
@@ -118,8 +125,9 @@ void ex5(){
 
 void ex6(){
     float a, b, c, delta, x1, x2;
+    printf("\n\nEXERCICIO6\nDETERMINAR AS RAIZES DE UMA EQUACAO DE 2 GRAU");
 
-    printf("\nDigite o valor de A: ");
+    printf("\n\nDigite o valor de A: ");
     scanf("%f", &a);
     printf("\nDigite o valor de B: ");
     scanf("%f", &b);
@@ -138,13 +146,13 @@ void ex6(){
     }
 
     if(delta == 0){
-        x1 = ((-b + sqrt(delta)) / 2 * a);
-        printf("A unica raiz é %.2f", x1);
+        x1 = ((b + sqrt(delta)) / 2 * a);
+        printf("A unica raiz e %.2f", x1);
     }
     else{
         x1 = ((-b + sqrt(delta)) / 2 * a);
         x2 = ((-b - sqrt(delta)) / 2 * a);
-        printf("As raizes são %.2f e %.2f", x1, x2);
+        printf("As raizes sao %.2f e %.2f", x1, x2);
     }
 
     return enter();
@@ -153,10 +161,11 @@ void ex6(){
 
 void ex7(){
     char caract;
+    printf("\n\nEXERCICIO7(DESAFIO)\nINFORMAR O QUAL O CODIGO DECIMAL E HEXADECIMAL DO CARACTERE DIGITADO");
 
-    printf("/nDigite um caractere do teclado: ");
+    printf("\n\nDigite um caractere do teclado: ");
     caract = getchar();
-    printf("\nO caractere %c tem o valor decimal %i e o valor hexadecimal %x", caract, caract, caract);
+    printf("\nO caractere %c tem o valor decimal %i e o valor hexadecimal e %x", caract, caract, caract);
 
     return enter();
 
