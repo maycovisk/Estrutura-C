@@ -176,7 +176,7 @@ void enter(){
     while((getchar()) != '\n');
     printf("\n\nPressione ENTER para voltar ao MENU INICIAL...\n\n");
     getchar();
-    return menu();
+    return main();
 }
 
 
