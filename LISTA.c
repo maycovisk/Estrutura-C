@@ -161,11 +161,11 @@ void ex6(){
 
 void ex7(){
     char caract;
-    printf("\n\nEXERCICIO7(DESAFIO)\nINFORMAR O QUAL O CODIGO DECIMAL E HEXADECIMAL DO CARACTERE DIGITADO");
+    printf("\n\nEXERCICIO7(DESAFIO)\nINFORMAR O QUAL O CODIGO DECIMAL E HEXADECIMAL DO CARACTER DIGITADO");
 
-    printf("\n\nDigite um caractere do teclado: ");
+    printf("\n\nDigite um caracter do teclado: ");
     caract = getchar();
-    printf("\nO caractere %c tem o valor decimal %i e o valor hexadecimal e %x", caract, caract, caract);
+    printf("\nO caracter %c tem o valor decimal %i e o valor hexadecimal e %x", caract, caract, caract);
 
     return enter();
 
