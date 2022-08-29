@@ -4,139 +4,182 @@
 #include <math.h>
 
 void ex1(){
-float numero, menor, maior;
-int cont = 1;
+    float numero, menor, maior;
+    int cont = 1;
 
-printf("\nEXERCICIO 1 \nEscreva um programa que leia 12 valores reais, \nencontra o maior e o menor deles e mostra o resultado.\n\n");
+    printf("\nEXERCICIO 1 \nEscreva um programa que leia 12 valores reais, \nencontra o maior e o menor deles e mostra o resultado.\n\n");
 
-while(cont <= 12){
-    printf("Digite %do numero real: ",cont);
-    scanf("%f", &numero);
-    if(cont == 1){
-        maior = numero;
-        menor = numero;
+    while(cont <= 12){
+        printf("Digite %do numero real: ",cont);
+        scanf("%f", &numero);
+        if(cont == 1){
+            maior = numero;
+            menor = numero;
+        }
+        else if(numero > maior){
+            maior = numero;
+        }
+        else if(numero < menor){
+            menor = numero;
+        }
+        cont++;
     }
-    else if(numero > maior){
-        maior = numero;
-    }
-    else if(numero < menor){
-        menor = numero;
-    }
-    cont++;
-}
-printf("O menor numero e %.2f e o maior e %.2f", menor, maior);
+    printf("O menor numero e %.2f e o maior e %.2f", menor, maior);
 
-return enter();
+    return enter();
 
 }
 
 void ex2(){
-printf("\nEXERCICIO 2 \nProgama que calcule e escreva \na soma: 1/1 + 3/2 + 5/3 + 7/4...+ 99/50.\n\n");
-float div, divid, soma;
+    printf("\nEXERCICIO 2 \nProgama que calcule e escreva \na soma: 1/1 + 3/2 + 5/3 + 7/4...+ 99/50.\n\n");
+    float div, divid, soma;
 
 
-for(div = 1, divid = 1; divid <= 50; div = div +2, divid = divid+1){
+    for(div = 1, divid = 1; divid <= 50; div = div +2, divid = divid+1){
 
-    soma = (div / divid) + soma;
-    }
-printf("Soma total e %.2f", soma);
+        soma = (div / divid) + soma;
+        }
+    printf("Soma total e %.2f", soma);
 
-return enter();
+    return enter();
 }
 
 void ex3(){
-printf("\nEXERCICIO 3 \nProgama que calcule a soma dos \nnumeros digitados pelo usuario.\n\n");
-int numero, soma = 0;
+    printf("\nEXERCICIO 3 \nProgama que calcule a soma dos \nnumeros digitados pelo usuario.\n\n");
+    int numero, soma = 0;
 
-do{
-    soma == 0;
-    printf("Resultado total: %d\n", soma);
-    printf("Digite um numero para somar ao resultado total: ");
-    scanf("%d", &numero);
+    do{
+        soma == 0;
+        printf("Resultado total: %d\n", soma);
+        printf("Digite um numero para somar ao resultado total: ");
+        scanf("%d", &numero);
 
-    soma = numero + soma;
+        soma = numero + soma;
 
-    printf("\nPara encerrar a soma digite 0 (ZERO)...\n\n");
-}while(numero != 0);
+        printf("\nPara encerrar a soma digite 0 (ZERO)...\n\n");
+    }while(numero != 0);
 
-return enter();
+    return enter();
 }
 
 void ex4(){
-printf("\nEXERCICIO 4 \nProgama que mostre os numeros com \nresto igual a 5 quando dividido por 13, entre 1000 a 1999.\n\n");
-int numero, div = 13;
-for(numero = 1000; numero <= 1999; numero++){
-    if(numero % div == 5)
-        printf("%d dividido por 13 possue resto igual a 5\n", numero);
-}
+    printf("\nEXERCICIO 4 \nProgama que mostre os numeros com \nresto igual a 5 quando dividido por 13, entre 1000 a 1999.\n\n");
+    int numero, div = 13;
+    for(numero = 1000; numero <= 1999; numero++){
+        if(numero % div == 5)
+            printf("%d dividido por 13 possue resto igual a 5\n", numero);
+    }
 
-return enter();
+    return enter();
 }
 
 void ex5(){
-printf("\nEXERCICIO 5 \nPrograma para gerar N primeiros \ntermos da sequencia.\n\n");
-int n1 = 1, n2 = 1, sequencia = 0, contagem = 2, valorN;
-printf("Digite valor de N para apresentar esse valor de sequencia: ");
-scanf("%d", &valorN);
-printf("%d - %d ", n1, n2);
+    printf("\nEXERCICIO 5 \nPrograma para gerar N primeiros \ntermos da sequencia.\n\n");
+    int n1 = 1, n2 = 1, sequencia = 0, contagem = 2, valorN;
+    printf("Digite valor de N para apresentar esse valor de sequencia: ");
+    scanf("%d", &valorN);
+    printf("%d - %d ", n1, n2);
 
-do{
+    do{
 
-    sequencia = n1 + n2;
-    printf("- %d ", sequencia);
-    n1 = n2;
-    n2 = sequencia;
+        sequencia = n1 + n2;
+        printf("- %d ", sequencia);
+        n1 = n2;
+        n2 = sequencia;
 
-    contagem++;
-}while(contagem < valorN);
+        contagem++;
+    }while(contagem < valorN);
 
-return enter();
+    return enter();
 
 }
 
 void ex6(){
-printf("\nEXERCICIO 6 \nPrograma para ler 12 numeros inteiros POSITIVOS, \nexibir o resultado das soma dos numeros impares e pares.\n\n");
-int numero = 0, impar = 0, par = 0, i;
+    printf("\nEXERCICIO 6 \nPrograma para ler 12 numeros inteiros POSITIVOS, \nexibir o resultado das soma dos numeros impares e pares.\n\n");
+    int numero = 0, impar = 0, par = 0, i;
 
-for(i = 1; i <= 12; i++){
-    printf("Digite o %do valor: ", i);
-    scanf("%d", &numero);
-        if(numero >= 0){
+    i = 1;
+    while(i <= 12)  {
 
-            if(numero % 2 == 0){
-                par = numero + par;
-            }
-            else if(numero % 2 != 0){
-                impar = numero + impar;
-            }
-        } else {
-            printf("Valor invalido, execucao cancelada...");
-            return enter();
+        printf("Digite o %do valor: ", i);
+        scanf("%d", &numero);
+        while(numero < 0){
+            printf("Numero invalido...\n");
+            printf("Digite novamente o %do valor: ", i);
+            scanf("%d", &numero);
         }
+        if(numero % 2 == 0){
+                    par = numero + par;
+        }
+        else if(numero % 2 != 0){
+            impar = numero + impar;
+        }
+        i++;
+    }
 
-}
 
-
-printf("A soma dos numeros impares: %d\nA soma dos numeros pares: %d", impar, par);
-return enter();
+    printf("A soma dos numeros impares: %d\nA soma dos numeros pares: %d", impar, par);
+    return enter();
 }
 
 void ex7(){
-printf("\nEXERCICIO 7 \nPrograma de LPF para lancamento \nde 5 notas para calcular a media final.\n\n");
-float nota = 0, media, soma;
-int i;
+    printf("\nEXERCICIO 7 \nPrograma de LPF para lancamento \nde 5 notas para calcular a media final.\n\n");
+    float nota = 0, media, soma;
+    int i;
 
-for(i = 1; i <= 5; i++){
-    printf("Digite a %da nota: ", i);
-    scanf("%f", &nota);
+    for(i = 1; i <= 5; i++){
+        printf("Digite a %da nota: ", i);
+        scanf("%f", &nota);
 
-    soma = nota + soma;
+        soma = nota + soma;
+    }
+
+    media = soma / 5;
+    printf("\nA media final do aluno e: %.2f",media);
+
+    return enter();
 }
 
-media = soma / 5;
-printf("\nA media final do aluno e: %.2f",media);
+void ex8(){
+    printf("\nEXERCICIO 8 \nPrograma que leia N numeros positivos e mostre \nna tela os numeros pares que sao divisiveis por 4 e 7.\n\n");
+    int n, i = 1;
 
-return enter();
+    printf("Digite um numero POSITIVO: ");
+        scanf("%d",&n);
+            while(n < 0){
+              printf("Numero invalido.\nDigite novamente um numero POSITIVO: ");
+        scanf("%d",&n);
+            }
+    do{
+            if(i % 4 == 0 && i % 7 == 0 && i % 2 == 0){
+                printf("%d\n", i);
+        }
+        i++;
+    }while(i <= n);
+
+    return enter();
+}
+
+void ex9(){
+    printf("\nEXERCICIO 9 \nJosevaldo tem 1,35m e cresce 2cm por ano, enquanto \nRafonildo tem 1,07 e cresce 3cm por ano.\n");
+    printf("Quantos anos serao necessarios para que Rafonildo seja maior que Josenaldo\n\n");
+    float altJosevaldo = 1.35, altRafonildo = 1.07, cmJosevaldo = 0.02, cmRafonildo = 0.03;
+    int ano = 1;
+
+    do{
+            altJosevaldo = altJosevaldo + cmJosevaldo;
+            altRafonildo = altRafonildo + cmRafonildo;
+            ano = ano + 1;
+    }while (altJosevaldo > altRafonildo);
+    printf("Serao necessarios %d anos para que Rafonildo seja maior que Josevaldo.", ano);
+
+    return enter();
+}
+
+void ex10(){
+
+
+
 }
 
 void enter(){
@@ -168,7 +211,7 @@ int  menu(){
         printf("\n0.....................................Sair");
         printf("\n\nDigite o numero da opcao desejada: ");
         scanf("%d", &opcao);
-    }while(opcao < 0 || 7 < opcao);
+    }while(opcao < 0 || 10 < opcao);
 
 }
 
@@ -185,8 +228,8 @@ int main(){
             case 5 : ex5(); break;
             case 6 : ex6(); break;
             case 7 : ex7(); break;
-            //case 8 : ex8(); break;
-            //case 9 : ex9(); break;
+            case 8 : ex8(); break;
+            case 9 : ex9(); break;
             //case 10 : ex10(); break;
             case 0 : exit(0);
             default : printf("Opcao invalida!");
