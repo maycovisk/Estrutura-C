@@ -50,11 +50,12 @@ void ex3(){
 
     do{
         soma == 0;
-        printf("Resultado total: %d\n", soma);
         printf("Digite um numero para somar ao resultado total: ");
         scanf("%d", &numero);
 
         soma = numero + soma;
+
+        printf("\nResultado total: %d", soma);
 
         printf("\nPara encerrar a soma digite 0 (ZERO)...\n\n");
     }while(numero != 0);
@@ -68,6 +69,7 @@ void ex4(){
     for(numero = 1000; numero <= 1999; numero++){
         if(numero % div == 5)
             printf("%d dividido por 13 possue resto igual a 5\n", numero);
+
     }
 
     return enter();
@@ -124,14 +126,19 @@ void ex6(){
 
 void ex7(){
     printf("\nEXERCICIO 7 \nPrograma de LPF para lancamento \nde 5 notas para calcular a media final.\n\n");
-    float nota = 0, media, soma;
-    int i;
+    float nota, media, soma = 0;
+    int i = 1;
 
-    for(i = 1; i <= 5; i++){
+    while(i <= 5){
         printf("Digite a %da nota: ", i);
         scanf("%f", &nota);
+        while(nota < 0 || nota > 10){
+            printf("Nota invalida...\nDigite novamente a %da nota: ", i);
+            scanf("%f", &nota);
+        }
 
         soma = nota + soma;
+        i++;
     }
 
     media = soma / 5;
@@ -210,7 +217,7 @@ int  menu(){
     int opcao;
 
     do{
-        printf("LISTA 1");
+        printf("LISTA 2");
         printf("\n\n1...............................Exercicio01");
         printf("\n2...............................Exercicio02");
         printf("\n3...............................Exercicio03");
@@ -221,7 +228,7 @@ int  menu(){
         printf("\n8...............................Exercicio08");
         printf("\n9...............................Exercicio09");
         printf("\n10..............................Exercicio10");
-        printf("\n0.....................................Sair");
+        printf("\n0......................................Sair");
         printf("\n\nDigite o numero da opcao desejada: ");
         scanf("%d", &opcao);
     }while(opcao < 0 || 10 < opcao);
