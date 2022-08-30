@@ -178,7 +178,20 @@ void ex9(){
 
 void ex10(){
 
+    int base, expoente, resultado = 1, i = 1;
 
+    printf("Digite o valor da base: ");
+    scanf("%d", &base);
+    printf("Digite o valor do expoente: ");
+    scanf("%d", &expoente);
+
+    for(i = 1; i <= expoente; i++){
+       resultado = base * resultado;
+    }
+
+    printf("O valor de %d elevado a %d e: %d", base, expoente, resultado);
+
+    return enter();
 
 }
 
@@ -230,7 +243,7 @@ int main(){
             case 7 : ex7(); break;
             case 8 : ex8(); break;
             case 9 : ex9(); break;
-            //case 10 : ex10(); break;
+            case 10 : ex10(); break;
             case 0 : exit(0);
             default : printf("Opcao invalida!");
         }
