@@ -25,8 +25,8 @@ void ex1(){
         cont++;
     }
     printf("O menor numero e %.2f e o maior e %.2f", menor, maior);
+    getchar();
 
-    return enter();
 
 }
 
@@ -41,7 +41,6 @@ void ex2(){
         }
     printf("Soma total e %.2f", soma);
 
-    return enter();
 }
 
 void ex3(){
@@ -60,7 +59,7 @@ void ex3(){
         printf("\nPara encerrar a soma digite 0 (ZERO)...\n\n");
     }while(numero != 0);
 
-    return enter();
+    getchar();
 }
 
 void ex4(){
@@ -72,7 +71,6 @@ void ex4(){
 
     }
 
-    return enter();
 }
 
 void ex5(){
@@ -92,7 +90,7 @@ void ex5(){
         contagem++;
     }while(contagem < valorN);
 
-    return enter();
+    getchar();
 
 }
 
@@ -121,7 +119,7 @@ void ex6(){
 
 
     printf("A soma dos numeros impares: %d\nA soma dos numeros pares: %d", impar, par);
-    return enter();
+    getchar();
 }
 
 void ex7(){
@@ -144,7 +142,8 @@ void ex7(){
     media = soma / 5;
     printf("\nA media final do aluno e: %.2f",media);
 
-    return enter();
+    getchar();
+
 }
 
 void ex8(){
@@ -164,7 +163,7 @@ void ex8(){
         i++;
     }while(i <= n);
 
-    return enter();
+    getchar();
 }
 
 void ex9(){
@@ -180,7 +179,6 @@ void ex9(){
     }while (altJosevaldo > altRafonildo);
     printf("Serao necessarios %d anos para que Rafonildo seja maior que Josevaldo.", ano);
 
-    return enter();
 }
 
 void ex10(){
@@ -198,18 +196,16 @@ void ex10(){
 
     printf("O valor de %d elevado a %d e: %d", base, expoente, resultado);
 
-    return enter();
-
+    getchar();
 }
 
 void enter(){
 
-    while((getchar()) != '\n');
     printf("\n\nPressione ENTER para voltar ao MENU INICIAL...\n\n");
     getchar();
     system("cls");  //usado para WINDOWS
     //system("clear"); //usado para LINUX
-    return main();
+
 }
 
 
@@ -236,9 +232,10 @@ int  menu(){
 }
 
 int main(){
-    int opcao = menu();
+    int opcao;
 
     do{
+        opcao = menu();
         while((getchar()) != '\n');
         switch(opcao){
             case 1 : ex1(); break;
@@ -254,6 +251,7 @@ int main(){
             case 0 : exit(0);
             default : printf("Opcao invalida!");
         }
+        enter();
     }while(opcao != 0);
 
     return 0;
