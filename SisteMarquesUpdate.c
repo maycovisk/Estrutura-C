@@ -77,6 +77,9 @@ int main(){
                         printf("======================================================\n\n");
                         break;
                     }
+                    else{
+                        printf("Nenhum cadastro encontrado...\n");
+                    }
                 }
 
 
@@ -133,7 +136,11 @@ int main(){
             printf("| Este software foi desenvolvido para fins didaticos.|\n");
             printf("| AUTOR: Marques Sousa                               |\n");
             printf("| DATA: 01/09/2022                                   |\n");
-            printf("| ATUALIZADO: Maycon de Lima Cesar                   |\n");
+            printf("| ATUALIZADO POR: Maycon de Lima Cesar               |\n");
+            printf("| NOTA DE ATUALIZACAO:                               |\n");
+            printf("| Adicionado a opcao 4 - EDITAR;                     |\n");
+            printf("| Adicionado a opcao 5 - DELETAR;                    |\n");
+            printf("| Adicionado a informacao e-mail dentro do cadastro; |\n");
             printf("======================================================\n");
             break;
         default:
