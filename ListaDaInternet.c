@@ -22,8 +22,11 @@ void ex3(){
     printf("Digite o valor de b: ");
     scanf("%d", &b);
 
+    a = a + b;
+    b = a - b;
+    a = a - b;
 
-    printf("O valor de a e %d e o valor de b e %d\n\n", b, a);
+    printf("O valor de a e %d e o valor de b e %d\n\n", a, b);
 }
 
 void ex4(){
@@ -61,7 +64,7 @@ void ex6(){
     printf("Digite o valor em reais: ");
     scanf("%f", &valorReal);
 
-    resultado = valorReal * valorDollar;
+    resultado = valorReal / valorDollar;
 
 
     printf("O valor de %.2f reais em dolares e %.2f dolares\n\n", valorReal, resultado);
