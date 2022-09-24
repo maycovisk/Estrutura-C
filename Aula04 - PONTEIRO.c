@@ -13,7 +13,7 @@ int *variavel = NULL
 ERRADO:
 int a = 5;
 int * p = NULL;
-*p = a;     //*p espera endereÁo
+*p = a;     //*p espera endereÔøΩo
 
 int a = 5;
 int * p = NULL
@@ -31,10 +31,13 @@ p = (int*) malloc(sizeof(int)); //aloca dinamica de memoria
 */
 int main(void){
     int a = 5;
-    int * p = malloc(sizeof(int));
-    *p = 10;
-    printf("Endereco de P: %p\n", &p);
-    printf("%p\n", p);
-    printf("%d\n", *p);
+    int * p = malloc(sizeof(int));  //malloc(3 * sizeof(int)) >>> CRIA VETOR DE 3 ESPACOS
+    p = &a;     //&a indica endere√ßo
+    *p = 10;    //*p indica conteudo
+    printf("Endereco do ponteiro : %p\n", &p);
+    printf("Endereco da variavel a : %p\n", p);
+    printf("Conteudo de onde o ponteiro aponta : %d\n", *p);
+    printf("Conteudo de a : %d\n", a);
+    printf("Endereco da variavel a : %p\n", &a);
     return 0;
 }
