@@ -1,4 +1,4 @@
-//EXEMPLO1
+//EXEMPLO2
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -12,7 +12,7 @@ int main(){
         pEnd = (struct sEndereco *) malloc(sizeof(struct sEndereco));
         if(pEnd == NULL){
             printf("Nao foi possivel alocar memoria. \n");
-            exit;
+            exit(0);
         }
         return 0;
 }
