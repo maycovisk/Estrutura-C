@@ -21,7 +21,7 @@ enum
 
 typedef void TFunc1(int);
 
-struct Transition   //A TRANSICAO … UMA FUNCAO QUE FAZ O ESTADO MUDAR DE ESTADO 1 PARA ESTADO 2 SE TIVER DEFINIDA PARA AQUEL ESTADO
+struct Transition   //A TRANSICAO √â UMA FUNCAO QUE FAZ O ESTADO MUDAR DE ESTADO 1 PARA ESTADO 2 SE TIVER DEFINIDA PARA AQUEL ESTADO
 {                           //CASO CONTRARIO ELA NAO FAZ NADA
 	char nome[SM_STR_LEN];
 	int  to_state;
@@ -35,7 +35,7 @@ struct State
 	char nome[SM_STR_LEN];
 	TFunc1 *OnEnter;  //ENTRA NO ESTADO
 	TFunc1 *OnExit;   //SAI DO ESTADO
-	Transition  transitions[SM_MAX_TRA];   //PRA CADA ESTADO TEM UM VETOR DE TRANSI«√O
+	Transition  transitions[SM_MAX_TRA];   //PRA CADA ESTADO TEM UM VETOR DE TRANSI√á√ÉO
 	int  qtd_transitions;
 };
 
